@@ -1,8 +1,15 @@
 public class ManagerClass {
 
     private int defaultLength = 10;
-
+    private int currentLength = defaultLength;
     private FilmConstruct[] films = new FilmConstruct[0];
+
+    public ManagerClass(int currentLength) {
+        this.currentLength = currentLength;
+    }
+
+    public ManagerClass() {
+    }
 
     public void add(FilmConstruct film) {
         FilmConstruct[] tmp = new FilmConstruct[films.length + 1];
@@ -23,35 +30,16 @@ public class ManagerClass {
         return resultie;
     }
 
-    public String findLast(int yourLength) {
-        if (yourLength > films.length) {
-            if (yourLength < 0) {
-                return null;
-            }
-            return null;
-        } else {
-            String resultie = "";
-            FilmConstruct[] last = new FilmConstruct[films.length];
-            for (int i = 0; i < yourLength; i++) {
-                last[i] = films[films.length - 1 - i];
-                String least = last[i].toString();
-                resultie = resultie + least + "\n";
-                System.out.println(least);
-            }
-            return resultie;
-        }
-    }
-
     public String findLast() {
-        if (defaultLength > films.length) {
-            if (defaultLength < 0) {
+        if (currentLength > films.length) {
+            if (currentLength < 0) {
                 return null;
             }
             return null;
         } else {
             String resultie = "";
             FilmConstruct[] last = new FilmConstruct[films.length];
-            for (int i = 0; i < defaultLength; i++) {
+            for (int i = 0; i < currentLength; i++) {
                 last[i] = films[films.length - 1 - i];
                 String least = last[i].toString();
                 resultie = resultie + least + "\n";

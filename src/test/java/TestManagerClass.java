@@ -54,7 +54,7 @@ public class TestManagerClass {
 
     @Test
     public void findLastTest() {
-        ManagerClass manage = new ManagerClass();
+        ManagerClass manage = new ManagerClass(3);
         manage.add(film1);
         manage.add(film2);
         manage.add(film3);
@@ -70,7 +70,7 @@ public class TestManagerClass {
         // в обратном порядке
 
         String expected = (film10.toString() + "\n" + film9.toString() + "\n" + film8.toString() + "\n");
-        String actual = (manage.findLast(3));
+        String actual = (manage.findLast());
 
         Assertions.assertEquals(expected, actual);
     }
