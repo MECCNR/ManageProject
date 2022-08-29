@@ -21,6 +21,8 @@ public class TestManagerClass {
 
     FilmConstruct film10 = new FilmConstruct(10, "Spider Man", "Action");
 
+    FilmConstruct film11 = new FilmConstruct(11, "Mega Man", "Action");
+
 
     @Test
     public void additionTest() {
@@ -86,11 +88,12 @@ public class TestManagerClass {
         manage.add(film8);
         manage.add(film9);
         manage.add(film10);
+        manage.add(film11);
 
-        String expected = (film10.toString() + "\n" +
+        String expected = (film11.toString() + "\n" + film10.toString() + "\n" +
                 film9.toString() + "\n" + film8.toString() + "\n" + film7.toString()
                 + "\n" + film6.toString() + "\n" + film5.toString() + "\n" + film4.toString() +
-                "\n" + film3.toString() + "\n" + film2.toString() + "\n" + film1.toString() + "\n");
+                "\n" + film3.toString() + "\n" + film2.toString() + "\n");
         String actual = (manage.findLast());
 
         Assertions.assertEquals(expected, actual);
