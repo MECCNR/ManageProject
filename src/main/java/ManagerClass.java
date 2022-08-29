@@ -23,16 +23,16 @@ public class ManagerClass {
         return resultie;
     }
 
-    public String findLast(int resultLength) {
-        if (resultLength > films.length) {
-            if (resultLength < 0) {
+    public String findLast(int yourLength) {
+        if (yourLength > films.length) {
+            if (yourLength < 0) {
                 return null;
             }
             return null;
         } else {
             String resultie = "";
             FilmConstruct[] last = new FilmConstruct[films.length];
-            for (int i = 0; i < resultLength; i++) {
+            for (int i = 0; i < yourLength; i++) {
                 last[i] = films[films.length - 1 - i];
                 String least = last[i].toString();
                 resultie = resultie + least + "\n";

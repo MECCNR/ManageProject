@@ -56,11 +56,18 @@ public class TestManagerClass {
         manage.add(film1);
         manage.add(film2);
         manage.add(film3);
+        manage.add(film4);
+        manage.add(film5);
+        manage.add(film6);
+        manage.add(film7);
+        manage.add(film8);
+        manage.add(film9);
+        manage.add(film10);
 
         // для тестирования этого модуля в "expected" вставьте 'film[номер фильма].toString() + "\n"'
         // в обратном порядке
 
-        String expected = (film3.toString() + "\n" + film2.toString() + "\n" + film1.toString() + "\n");
+        String expected = (film10.toString() + "\n" + film9.toString() + "\n" + film8.toString() + "\n");
         String actual = (manage.findLast(3));
 
         Assertions.assertEquals(expected, actual);
