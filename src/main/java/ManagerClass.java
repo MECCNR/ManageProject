@@ -20,36 +20,16 @@ public class ManagerClass {
         films = tmp;
     }
 
-    public String findAll() {
-        String resultie = "";
-        for (int i = 0; i < films.length; i++) {
-            String all = films[i].toString();
-            System.out.println(all);
-            resultie = resultie + all + "\n";
+    public FilmConstruct[] findLast() {
+        FilmConstruct[] main = findAll();
+        FilmConstruct[] last = new FilmConstruct[currentLength];
+        for (int i = 0; i < last.length; i++) {
+            last[i] = main[main.length - 1 - i];
         }
-        return resultie;
+        return last;
     }
 
-    public String findLast() {
-        if (currentLength > films.length) {
-            if (currentLength < 0) {
-                return null;
-            }
-            return null;
-        } else {
-            String resultie = "";
-            FilmConstruct[] last = new FilmConstruct[films.length];
-            for (int i = 0; i < currentLength; i++) {
-                last[i] = films[films.length - 1 - i];
-                String least = last[i].toString();
-                resultie = resultie + least + "\n";
-                System.out.println(least);
-            }
-            return resultie;
-        }
-    }
-
-    public FilmConstruct[] getFilms() {
+    public FilmConstruct[] findAll() {
         return films;
     }
 }

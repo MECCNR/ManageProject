@@ -28,11 +28,9 @@ public class TestManagerClass {
     public void additionTest() {
         ManagerClass manage = new ManagerClass();
         manage.add(film1);
-        manage.add(film2);
-        manage.add(film3);
 
-        FilmConstruct[] expected = {film1, film2, film3};
-        FilmConstruct[] actual = manage.getFilms();
+        FilmConstruct[] expected = {film1};
+        FilmConstruct[] actual = manage.findAll();
 
         Assertions.assertArrayEquals(expected, actual);
     }
@@ -44,12 +42,10 @@ public class TestManagerClass {
         manage.add(film2);
         manage.add(film3);
 
-        // для тестирования этого модуля в "expected" вставьте 'film[номер фильма].toString() + "\n"'
+        FilmConstruct[] expected = {film1, film2, film3};
+        FilmConstruct[] actual = manage.findAll();
 
-        String expected = (film1.toString() + "\n" + film2.toString() + "\n" + film3.toString() + "\n");
-        String actual = manage.findAll();
-
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
@@ -66,13 +62,10 @@ public class TestManagerClass {
         manage.add(film9);
         manage.add(film10);
 
-        // для тестирования этого модуля в "expected" вставьте 'film[номер фильма].toString() + "\n"'
-        // в обратном порядке
+        FilmConstruct[] expected = {film10, film9, film8};
+        FilmConstruct[] actual = manage.findLast();
 
-        String expected = (film10.toString() + "\n" + film9.toString() + "\n" + film8.toString() + "\n");
-        String actual = (manage.findLast());
-
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
@@ -90,12 +83,9 @@ public class TestManagerClass {
         manage.add(film10);
         manage.add(film11);
 
-        String expected = (film11.toString() + "\n" + film10.toString() + "\n" +
-                film9.toString() + "\n" + film8.toString() + "\n" + film7.toString()
-                + "\n" + film6.toString() + "\n" + film5.toString() + "\n" + film4.toString() +
-                "\n" + film3.toString() + "\n" + film2.toString() + "\n");
-        String actual = (manage.findLast());
+        FilmConstruct[] expected = {film11, film10, film9, film8, film7, film6, film5, film4, film3, film2};
+        FilmConstruct[] actual = manage.findLast();
 
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertArrayEquals(expected, actual);
     }
 }
