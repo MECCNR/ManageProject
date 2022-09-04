@@ -1,14 +1,14 @@
-public class ManagerClass {
+public class Manager {
 
     private int defaultLength = 10;
     private int currentLength = defaultLength;
     private FilmConstruct[] films = new FilmConstruct[0];
 
-    public ManagerClass(int currentLength) {
+    public Manager(int currentLength) {
         this.currentLength = currentLength;
     }
 
-    public ManagerClass() {
+    public Manager() {
     }
 
     public void add(FilmConstruct film) {
@@ -22,11 +22,19 @@ public class ManagerClass {
 
     public FilmConstruct[] findLast() {
         FilmConstruct[] main = findAll();
-        FilmConstruct[] last = new FilmConstruct[currentLength];
-        for (int i = 0; i < last.length; i++) {
-            last[i] = main[main.length - 1 - i];
+        if (findAll().length < currentLength) {
+            FilmConstruct[] last = new FilmConstruct[findAll().length];
+            for (int i = 0; i < findAll().length; i++) {
+                last[i] = main[main.length - 1 - i];
+            }
+            return last;
+        } else {
+            FilmConstruct[] last = new FilmConstruct[currentLength];
+            for (int i = 0; i < last.length; i++) {
+                last[i] = main[main.length - 1 - i];
+            }
+            return last;
         }
-        return last;
     }
 
     public FilmConstruct[] findAll() {
